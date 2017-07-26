@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3106a105f1914a2f95baab28935c1a35" Name="Diagram1" ZoomLevel="94">
+        <EntityTypeShape EntityType="BuruDataModel.Akun" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BuruDataModel.Bug" Width="1.5" PointX="0.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BuruDataModel.ListBug" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BuruDataModel.ListUser" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BuruDataModel.Project" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <AssociationConnector Association="BuruDataModel.FK_dbo_ListUser_dbo_Akun_AkunId" ManuallyRouted="false" />
+        <AssociationConnector Association="BuruDataModel.FK_dbo_ListBug_dbo_Bug_BugId" ManuallyRouted="false" />
+        <AssociationConnector Association="BuruDataModel.FK_dbo_ListBug_dbo_Project_ProjectId" ManuallyRouted="false" />
+        <AssociationConnector Association="BuruDataModel.FK_dbo_ListUser_dbo_Project_ProjectId" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

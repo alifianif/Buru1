@@ -1,0 +1,124 @@
+﻿@model IEnumerable<Buru.Models.Bug>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<!--BEGIN PAGE HEADER-->
+<h3 class="page-title">
+    List Bug<small> a bug list from your Project </small>
+</h3>
+
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a href="@Url.Action("Index","Home")">Home</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="@Url.Action("Index","Projects")">List Project</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+    </ul>
+</div>
+<!-- END PAGE HEADER-->
+
+<div class="page-content-wrapper">
+    <div>
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+        <div class="portlet box grey-cascade">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-globe"></i>List Bug
+                </div>
+
+            </div>
+            <div class="portlet-body">
+                <p>
+                    <a href="@Url.Action("Create", "Bug")" class="btn green" id="sample_editable_1_new">Add New</a>
+                </p>
+                <table class="table table-striped table-bordered table-hover">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Title)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Description)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Steps)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Attachment)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Assignee)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CreatedDate)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ClosedDate)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Severity)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Kind)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Status)
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Title)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Description)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Steps)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Attachment)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Assignee)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CreatedDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ClosedDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Severity)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Kind)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Status)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.BugId }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.BugId }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.BugId })
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+        </div>
+        <!-- END EXAMPLE TABLE PORTLET-->
+    </div>
+</div>
+
+<!-- END PAGE CONTENT-->
